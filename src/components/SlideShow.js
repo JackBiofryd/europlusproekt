@@ -193,10 +193,9 @@ export default function SlideShow() {
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<br />
-						<br />
 						<h2 className="XL-heading">
-							Plumbing. <br />
+							Plumbing <br />
+							Installation.
 						</h2>
 						<p className="lead">
 							Let there be water! <br /> Never stay thirsty again!
