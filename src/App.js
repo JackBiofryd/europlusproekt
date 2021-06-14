@@ -15,13 +15,13 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/upload">
+				<Route exact path="/upload">
 					<Upload />
 				</Route>
-				<Route path="/work/:workType">
+				<Route exact path="/work/:workType">
 					<Work />
 				</Route>
-				<Route path="/">
+				<Route exact path="/">
 					<LandingPage />
 					<OurWork />
 					<About />

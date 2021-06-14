@@ -36,8 +36,7 @@ export default function Upload() {
 			`https://europlusproekt.herokuapp.com/upload/${imgType}`,
 			{
 				method: 'POST',
-				body: formData,
-				mode: 'no-cors'
+				body: formData
 			}
 		);
 		const data = await response.json();
