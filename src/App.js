@@ -10,11 +10,11 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route path="/work/:workType">
-					<Work />
-				</Route>
 				<Route path="/upload">
 					<Upload />
+				</Route>
+				<Route path="/work/:workType">
+					<Work />
 				</Route>
 				<Route path="/">
 					<LandingPage />
