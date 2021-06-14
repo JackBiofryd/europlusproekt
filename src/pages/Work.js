@@ -257,7 +257,9 @@ export default function Work() {
 							number={index}
 						/>
 					))}
-				<Link to="/upload">Go to upload</Link>
+				<Link to="/upload" className="btn btn-bottomright">
+					+
+				</Link>
 			</div>
 		</div>
 	);
