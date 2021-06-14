@@ -257,6 +257,7 @@ export default function Work() {
 							number={index}
 						/>
 					))}
+				<a href="/upload">Go to upload</a>
 			</div>
 		</div>
 	);
