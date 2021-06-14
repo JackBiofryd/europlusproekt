@@ -17,7 +17,7 @@ export default function Work() {
 	useEffect(() => {
 		const fetchFiles = async () => {
 			const response = await fetch(
-				`http://46.217.16.106:8080/getImages/${workType}`
+				`https://europlusproekt.herokuapp.com/getImages/${workType}`
 			);
 			const data = await response.json();
 
@@ -229,7 +229,7 @@ export default function Work() {
 					{images &&
 						images.map((image, index) => (
 							<img
-								src={`http://46.217.16.106:8080/uploads/${workType}/${image}`}
+								src={`https://europlusproekt.herokuapp.com/uploads/${workType}/${image}`}
 								alt="Some of our work"
 								className="carousel-img"
 								key={index}
@@ -250,7 +250,7 @@ export default function Work() {
 				{images &&
 					images.map((image, index) => (
 						<img
-							src={`http://46.217.16.106:8080/uploads/${workType}/${image}`}
+							src={`https://europlusproekt.herokuapp.com/uploads/${workType}/${image}`}
 							alt="Some of our work"
 							onClick={onImgClick}
 							key={index}
