@@ -15,17 +15,17 @@ function App() {
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/upload">
-					<Upload />
-				</Route>
-				<Route exact path="/work/:workType">
-					<Work />
-				</Route>
 				<Route exact path="/">
 					<LandingPage />
 					<OurWork />
 					<About />
 					<Contact />
+				</Route>
+				<Route exact path="/upload">
+					<Upload />
+				</Route>
+				<Route exact path="/work/:workType">
+					<Work />
 				</Route>
 				<Redirect to="/" />
 			</Switch>
