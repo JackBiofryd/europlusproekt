@@ -103,6 +103,7 @@ img {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	border-top-right-radius: 0;
+	padding: 0.5rem 0.5rem;
 }
 
 .btn-bottomright {
