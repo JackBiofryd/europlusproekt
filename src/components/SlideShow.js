@@ -76,14 +76,22 @@ export default function SlideShow() {
 			<div className="main-content">
 				<div className="left">
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
 							Hard Work <br />
 							Pays Off.
 						</h2>
-						<p className="lead">
+						<h2 className="XL-heading mk">
+							Трудот <br />
+							Се Исплаќа.
+						</h2>
+						<p className="lead en">
 							We are the proof. <br /> Contact us for any project
 							on your mind.
 						</p>
+						<p className="lead mk">
+							Ние сме доказот. <br /> Контактирајте не за секој
+							проект кој посакувате!
+						</p>
 						<Link
 							activeClass="current"
 							to="ourWork"
@@ -92,17 +100,26 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
 							Solar <br />
 							Systems.
 						</h2>
-						<p className="lead">
-							Need hot water? <br /> We install solar panels at a
-							cheap price.
+						<h2 className="XL-heading mk">
+							Соларни <br />
+							Системи.
+						</h2>
+						<p className="lead en">
+							Need hot water? <br /> We install effective solar
+							systems fast and cheap!
+						</p>
+						<p className="lead mk">
+							Ви треба топла вода? <br /> Инсталираме соларни
+							системи брзо, ефикасно и евтино!
 						</p>
 						<Link
 							activeClass="current"
@@ -112,18 +129,27 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
 							Radiator <br />
 							Heating.
 						</h2>
-						<p className="lead">
+						<h2 className="XL-heading mk">
+							Парно и <br />
+							Радијатори.
+						</h2>
+						<p className="lead en">
 							Keep your family warm this winter. <br /> Get the
 							highest quality radiators super quickly.
 						</p>
+						<p className="lead mk">
+							Стоплете се во зима. <br /> Инсталирајте радијатори
+							во вашиот дом веднаш!
+						</p>
 						<Link
 							activeClass="current"
 							to="ourWork"
@@ -132,17 +158,25 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
 							Doors & <br /> Windows.
 						</h2>
-						<p className="lead">
+						<h2 className="XL-heading mk">
+							Врати и <br /> Прозори.
+						</h2>
+						<p className="lead en">
 							Keep the cold outside! <br /> Get the best doors and
 							windows!
 						</p>
+						<p className="lead mk">
+							Држете го ладното надвор! <br /> Контактирајте не за
+							најдобрите врати и прозор!
+						</p>
 						<Link
 							activeClass="current"
 							to="ourWork"
@@ -151,35 +185,24 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
 							Floor <br /> Heating.
 						</h2>
-						<p className="lead">
+						<h2 className="XL-heading mk">
+							Подно <br /> Греење.
+						</h2>
+						<p className="lead en">
 							Keep your feet warm! <br /> Let us heat up your
 							floors!
 						</p>
-						<Link
-							activeClass="current"
-							to="ourWork"
-							spy={true}
-							smooth={true}
-							offset={-100}
-							duration={1000}
-							className="btn my-1">
-							Learn More
-						</Link>
-					</div>
-					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
-							Electricity <br /> & Power.
-						</h2>
-						<p className="lead">
-							Light up your future! <br /> We can fix any
-							appliances!
+						<p className="lead mk">
+							Чувајте ги вашите нози топли! <br /> Дозволете ни да
+							го затоплиме вашиот под!
 						</p>
 						<Link
 							activeClass="current"
@@ -189,16 +212,53 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
+							Electricity <br /> & Power.
+						</h2>
+						<h2 className="XL-heading mk">
+							Струја и <br /> Светлина.
+						</h2>
+						<p className="lead en">
+							Let there be light! <br /> Fill your house with
+							power outlets!
+						</p>
+						<p className="lead mk">
+							Нека има светлина! <br /> Исполнете ја вашата ќуќа
+							со штекери!
+						</p>
+						<Link
+							activeClass="current"
+							to="ourWork"
+							spy={true}
+							smooth={true}
+							offset={-100}
+							duration={1000}
+							className="btn my-1">
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
+						</Link>
+					</div>
+					<div className="text-container mr-3 fade">
+						<h2 className="XL-heading en">
 							Plumbing <br />
 							Installation.
 						</h2>
-						<p className="lead">
-							Let there be water! <br /> Never stay thirsty again!
+						<h2 className="XL-heading mk">
+							Водоводна <br />
+							Инсталација.
+						</h2>
+						<p className="lead en">
+							Never stay thirsty again! <br /> The best pluming
+							around!
+						</p>
+						<p className="lead mk">
+							Никогаш повеќе не бидете жедни! <br /> Најдобрата
+							водоинсталација во оклината!
 						</p>
 						<Link
 							activeClass="current"
@@ -208,17 +268,26 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 					<div className="text-container mr-3 fade">
-						<h2 className="XL-heading">
+						<h2 className="XL-heading en">
 							AC Cooling
 							<br />& Heating
 						</h2>
-						<p className="lead">
+						<h2 className="XL-heading mk">
+							Клими и
+							<br /> Греење.
+						</h2>
+						<p className="lead en">
 							Keep cool in the summer! <br /> Get an AC in
 							record-breaking time!
+						</p>
+						<p className="lead mk">
+							Бидете свежи за време на летото! <br /> Инсталирајте
+							клима уреди во рекордно време!
 						</p>
 						<Link
 							activeClass="current"
@@ -228,7 +297,8 @@ export default function SlideShow() {
 							offset={-100}
 							duration={1000}
 							className="btn my-1">
-							Learn More
+							<p className="en">Learn More</p>
+							<p className="mk">Дознај Повеќе</p>
 						</Link>
 					</div>
 				</div>
@@ -277,12 +347,6 @@ export default function SlideShow() {
 			</div>
 			<div className="shape">
 				<img src={shapeImg} alt="Shape" />
-			</div>
-			<div className="social-media-icons">
-				<i className="fab fa-twitter fa-2x"></i>
-				<i className="fab fa-facebook-messenger fa-2x"></i>
-				<i className="fab fa-snapchat-ghost fa-2x"></i>
-				<i className="fab fa-instagram fa-2x"></i>
 			</div>
 			<div className="arrows">
 				<i

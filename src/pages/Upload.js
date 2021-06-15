@@ -33,7 +33,7 @@ export default function Upload() {
 		formData.append('image', inputs.image);
 
 		const response = await fetch(
-			`https://europlusproekt.herokuapp.com/upload/${imgType}`,
+			`http://localhost:5000/upload/${imgType}`,
 			{
 				method: 'POST',
 				body: formData

@@ -27,11 +27,24 @@ a {
 	cursor: pointer;
 }
 
+a > p {
+	display: inline;
+}
+
 ul {
 	list-style: none;
 }
 img {
 	width: 100%;
+}
+
+/* Handle language change */
+.page-wrapper.mk .en {
+	display: none !important;
+}
+
+.page-wrapper.en .mk {
+	display: none !important;
 }
 
 /* Utility Classes */
@@ -112,6 +125,14 @@ img {
 	border-radius: 0;
 	border-top-left-radius: 25px;
 	padding: 1rem 1rem;
+}
+
+.btn-topright {
+	position: fixed;
+	top: 0;
+	right: 0;
+	border-radius: 0;
+	border-bottom-left-radius: 25px;
 }
 
 .S-heading {
@@ -343,6 +364,7 @@ textarea.input {
 	color: rgba(43, 47, 57, 0.7);
 	font-weight: 300;
 }
+
 .sticky-nav .lang-change-btn {
 	color: var(--primary-color);
 }
@@ -577,30 +599,6 @@ textarea.input {
 	opacity: 0.8;
 }
 
-.main-landing .social-media-icons {
-	position: absolute;
-	bottom: 2rem;
-	left: 55%;
-	z-index: 100;
-}
-
-.main-landing .social-media-icons .fab {
-	color: #333;
-	opacity: 0.6;
-	margin-right: 0.75rem;
-	cursor: pointer;
-	transform: scale(0.9);
-	transition: 0.3s all ease;
-}
-
-.main-landing .social-media-icons .fab:hover {
-	opacity: 0.9;
-}
-
-.main-landing .social-media-icons:last-child {
-	margin-right: 0;
-}
-
 .main-landing .arrows {
 	position: absolute;
 	bottom: 12%;
@@ -718,6 +716,7 @@ textarea.input {
 
 .work-img-container p {
 	position: absolute;
+	text-align: center;
 	z-index: 100;
 	top: -20%;
 	left: 50%;
@@ -1006,10 +1005,6 @@ textarea.input {
 
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 900px), (orientation: portrait) {
-	.social-media-icons {
-		display: none;
-	}
-
 	.links {
 		display: flex;
 		justify-content: flex-end;

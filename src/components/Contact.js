@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import LangContext from '../context/lang-context';
 
 export default function Contact() {
-	const [sendEmailBtnText, setSendEmailBtnText] = useState('Submit');
 	const [inputs, setInputs] = useState({
 		firstName: '',
 		lastName: '',
@@ -9,6 +9,9 @@ export default function Contact() {
 		phone: '',
 		message: ''
 	});
+	const langContext = useContext(LangContext);
+
+	const [sendEmailBtnText, setSendEmailBtnText] = useState('Submit');
 
 	const handleChange = e =>
 		setInputs(prevState => ({
@@ -63,15 +66,22 @@ export default function Contact() {
 	return (
 		<div className="contact-container" id="contact">
 			<div className="p-2 py-4 container-small center">
-				<p className="lead bold mb-1">Contact</p>
-				<h3 className="ML-heading">
+				<p className="lead bold mb-1 en">Contact</p>
+				<p className="lead bold mb-1 mk">Контакт</p>
+				<h3 className="ML-heading en">
 					So, let's start your next project.
+				</h3>
+				<h3 className="ML-heading mk">
+					Ајде да ја оствариме вашата замисла!
 				</h3>
 				<form onSubmit={handleSubmit} className="contact-form mt-3">
 					<div className="flex-group">
 						<div className="input-group">
-							<label htmlFor="firstName" className="label">
+							<label htmlFor="firstName" className="label en">
 								First Name
+							</label>
+							<label htmlFor="firstName" className="label mk">
+								Име
 							</label>
 							<input
 								type="text"
@@ -80,12 +90,17 @@ export default function Contact() {
 								id="firstName"
 								value={inputs.firstName}
 								onChange={handleChange}
-								placeholder="John"
+								placeholder={
+									langContext.isMk ? 'Марко' : 'John'
+								}
 							/>
 						</div>
 						<div className="input-group">
-							<label htmlFor="lastName" className="label">
+							<label htmlFor="lastName" className="label en">
 								Last Name
+							</label>
+							<label htmlFor="lastName" className="label mk">
+								Презиме
 							</label>
 							<input
 								type="lastName"
@@ -94,14 +109,19 @@ export default function Contact() {
 								id="lastName"
 								value={inputs.lastName}
 								onChange={handleChange}
-								placeholder="Doe"
+								placeholder={
+									langContext.isMk ? 'Петров' : 'Doe'
+								}
 							/>
 						</div>
 					</div>
 					<div className="flex-group">
 						<div className="input-group">
-							<label htmlFor="email" className="label">
+							<label htmlFor="email" className="label en">
 								Email
+							</label>
+							<label htmlFor="email" className="label mk">
+								Е-маил
 							</label>
 							<input
 								type="email"
@@ -114,8 +134,11 @@ export default function Contact() {
 							/>
 						</div>
 						<div className="input-group">
-							<label htmlFor="phone" className="label">
+							<label htmlFor="phone" className="label en">
 								Phone Number
+							</label>
+							<label htmlFor="phone" className="label mk">
+								Телефонски број
 							</label>
 							<input
 								type="text"
@@ -129,8 +152,11 @@ export default function Contact() {
 						</div>
 					</div>
 					<div className="input-group">
-						<label htmlFor="message" className="label">
+						<label htmlFor="message" className="label en">
 							Anything else to add?
+						</label>
+						<label htmlFor="message" className="label mk">
+							Нешто да дополнете?
 						</label>
 						<textarea
 							type="text"
@@ -141,7 +167,9 @@ export default function Contact() {
 							onChange={handleChange}
 							cols="10"
 							rows="10"
-							placeholder="Message"
+							placeholder={
+								langContext.isMk ? 'Порака' : 'Message'
+							}
 						/>
 					</div>
 					<input

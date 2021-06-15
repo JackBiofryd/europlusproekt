@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 import Modal from '../components/Modal';
+import LangContext from '../context/lang-context';
 
 export default function Work() {
 	const [imgIndex, setImgIndex] = useState(0);
@@ -13,6 +14,7 @@ export default function Work() {
 	const isSmallScreen = useMediaQuery({
 		query: '(max-width: 768px)'
 	});
+	const { isMk, setIsMk, setLang, lang } = useContext(LangContext);
 
 	useEffect(() => {
 		const fetchFiles = async () => {
@@ -27,51 +29,62 @@ export default function Work() {
 		fetchFiles();
 	}, [workType]);
 
+	const onLangChange = () => {
+		if (isMk) {
+			setIsMk(false);
+			setLang('en');
+			return;
+		}
+
+		setIsMk(true);
+		setLang('mk');
+	};
+
 	let navbar = (
 		<nav className="navbar-secondary py-1">
 			<div className="container-small center">
 				<Link
 					className={`work-link ${workType === 'solar' && 'current'}`}
 					to="/work/solar">
-					Solar
+					{isMk ? 'Соларни' : 'Solar'}
 				</Link>
 				<Link
 					className={`work-link ${
 						workType === 'radiators' && 'current'
 					}`}
 					to="/work/radiators">
-					Radiators
+					{isMk ? 'Радијатори' : 'Radiators'}
 				</Link>
 				<Link
 					className={`work-link ${
 						workType === 'electricity' && 'current'
 					}`}
 					to="/work/electricity">
-					Electricity
+					{isMk ? 'Струја' : 'Electricity'}
 				</Link>
 				<Link
 					className={`work-link ${
 						workType === 'plumbing' && 'current'
 					}`}
 					to="/work/plumbing">
-					Pluming
+					{isMk ? 'Водоинсталација' : 'Plumbing'}
 				</Link>
 				<Link
 					className={`work-link ${
 						workType === 'heating' && 'current'
 					}`}
 					to="/work/heating">
-					Floor Heating
+					{isMk ? 'Подно Греење' : 'Floor Heating'}
 				</Link>
 				<Link
 					className={`work-link ${workType === 'PVC' && 'current'}`}
 					to="/work/PVC">
-					PVC
+					{isMk ? 'Врати и Прозори' : 'Doors & Windows'}
 				</Link>
 				<Link
 					className={`work-link ${workType === 'AC' && 'current'}`}
 					to="/work/AC">
-					AC
+					{isMk ? 'Клими' : 'AC'}
 				</Link>
 			</div>
 		</nav>
@@ -141,9 +154,6 @@ export default function Work() {
 							</Link>
 						</div>
 					</div>
-					<div className="lang-btn">
-						<button className="lang-change-btn">EN</button>
-					</div>
 				</div>
 			</React.Fragment>
 		);
@@ -198,21 +208,21 @@ export default function Work() {
 	const getHeading = workType => {
 		switch (workType) {
 			case 'PVC':
-				return 'Doors & Windows';
+				return isMk ? 'Врати и Прозори' : 'Doors & Windows';
 			case 'AC':
-				return 'Air Conditioning';
+				return isMk ? 'Клима Уреди' : 'Air Conditioning';
 			case 'electricity':
-				return 'Electricity & Power';
+				return isMk ? 'Струја' : 'Electricity & Power';
 			case 'solar':
-				return 'Solar Systems';
+				return isMk ? 'Соларни Системи' : 'Solar Systems';
 			case 'radiators':
-				return 'Radiator Heating';
+				return isMk ? 'Радијатори' : 'Radiator Heating';
 			case 'plumbing':
-				return 'Plumbing';
+				return isMk ? 'Водоинсталација' : 'Plumbing';
 			case 'heating':
-				return 'Floor Heating';
+				return isMk ? 'Подно Греење' : 'Floor Heating';
 			default:
-				return 'Our Work';
+				return isMk ? 'Наши Проекти' : 'Our Work';
 		}
 	};
 
@@ -241,8 +251,11 @@ export default function Work() {
 			<div className={`work-bg bg-${workType}`}>
 				<Link to="/" className="btn btn-topleft">
 					<i className="fas fa-arrow-left mr-0-5"></i>
-					Home
+					{isMk ? 'Назад' : 'Home'}
 				</Link>
+				<button className="btn btn-topright" onClick={onLangChange}>
+					{lang.toUpperCase()}
+				</button>
 				<h1 className="L-heading">{getHeading(workType)}</h1>
 			</div>
 			{navbar}

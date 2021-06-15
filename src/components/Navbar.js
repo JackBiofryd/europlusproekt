@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-scroll';
 import logo from '../static/logo.png';
+import LangContext from '../context/lang-context';
 
 export default function Navbar() {
 	const [showMenu, setShowMenu] = useState(false);
 	const [stickyNav, setStickyNav] = useState(false);
+	const langContext = useContext(LangContext);
 	const isSmallScreen = useMediaQuery({
 		query: '(max-width: 900px)'
 	});
@@ -15,6 +17,17 @@ export default function Navbar() {
 			setStickyNav(window.pageYOffset !== 0);
 		};
 	}, []);
+
+	const onLangChange = () => {
+		if (langContext.isMk) {
+			langContext.setIsMk(false);
+			langContext.setLang('en');
+			return;
+		}
+
+		langContext.setIsMk(true);
+		langContext.setLang('mk');
+	};
 
 	let navLinks = (
 		<React.Fragment>
@@ -26,7 +39,7 @@ export default function Navbar() {
 					smooth={true}
 					offset={0}
 					duration={1000}>
-					Home
+					{langContext.isMk ? 'Дома' : 'Home'}
 				</Link>
 				<Link
 					activeClass="current"
@@ -35,7 +48,7 @@ export default function Navbar() {
 					smooth={true}
 					offset={-70}
 					duration={1000}>
-					About
+					{langContext.isMk ? 'За Нас' : 'About'}
 				</Link>
 				<Link
 					activeClass="current"
@@ -44,7 +57,7 @@ export default function Navbar() {
 					smooth={true}
 					offset={-70}
 					duration={1000}>
-					Contact
+					{langContext.isMk ? 'Контакт' : 'Contact'}
 				</Link>
 			</div>
 			<div className="btns">
@@ -56,9 +69,11 @@ export default function Navbar() {
 					offset={-100}
 					duration={1000}
 					className="btn">
-					Our Work
+					{langContext.isMk ? 'Проекти' : 'Our Work'}
 				</Link>
-				<button className="lang-change-btn">EN</button>
+				<button className="lang-change-btn" onClick={onLangChange}>
+					{langContext.lang.toUpperCase()}
+				</button>
 			</div>
 		</React.Fragment>
 	);
@@ -70,7 +85,7 @@ export default function Navbar() {
 					<div className="hamburger-menu">
 						<i
 							onClick={() => setShowMenu(prevState => !prevState)}
-							class="fas fa-bars fa-2x"></i>
+							className="fas fa-bars fa-2x"></i>
 
 						<div
 							className={`menu ${
@@ -83,7 +98,7 @@ export default function Navbar() {
 								smooth={true}
 								offset={0}
 								duration={1000}>
-								Home
+								{langContext.isMk ? 'Дома' : 'Home'}
 							</Link>
 							<Link
 								activeClass="current"
@@ -92,7 +107,7 @@ export default function Navbar() {
 								smooth={true}
 								offset={-100}
 								duration={1000}>
-								Our Work
+								{langContext.isMk ? 'Проекти' : 'Our Work'}
 							</Link>
 							<Link
 								activeClass="current"
@@ -101,7 +116,7 @@ export default function Navbar() {
 								smooth={true}
 								offset={-70}
 								duration={1000}>
-								About
+								{langContext.isMk ? 'За Нас' : 'About'}
 							</Link>
 							<Link
 								activeClass="current"
@@ -110,12 +125,16 @@ export default function Navbar() {
 								smooth={true}
 								offset={-70}
 								duration={1000}>
-								Contact
+								{langContext.isMk ? 'Контакт' : 'Contact'}
 							</Link>
 						</div>
 					</div>
 					<div className="lang-btn">
-						<button className="lang-change-btn">EN</button>
+						<button
+							className="lang-change-btn"
+							onClick={onLangChange}>
+							EN
+						</button>
 					</div>
 				</div>
 			</React.Fragment>

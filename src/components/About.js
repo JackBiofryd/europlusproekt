@@ -11,7 +11,8 @@ export default function About() {
 					<img src={aboutImg} alt="About Us" />
 				</div>
 				<div className="about-text px-2">
-					<h3 className="S-heading center mb-3">About Us</h3>
+					<h3 className="S-heading center mb-3 en">About Us</h3>
+					<h3 className="S-heading center mb-3 mk">За Нас</h3>
 					<p className="lead mt-1-5">
 						Lorem ipsum, dolor sit amet consectetur adipisicing
 						elit. Accusantium praesentium nostrum qui laudantium
@@ -24,12 +25,18 @@ export default function About() {
 						offset={0}
 						duration={1000}
 						className="center btn-block btn mt-2">
-						Our Work
+						<p className="en">Our Work</p>
+						<p className="mk">Наши Проекти</p>
 					</Link>
-					<p className="lead mt-2">
+					<p className="lead mt-2 en">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Necessitatibus quisquam provident cum maxime minima
 						harum obcaecati neque consequuntur ex ut.
+					</p>
+					<p className="lead mt-2 mk">
+						Lorem ipsum моркови подобрени попусти. Обезбедете барем
+						во овој момент една од потребите на од нив, ниту како
+						резултат на тоа може да станат слепи.
 					</p>
 					<p className="lead mt-2 mb-3">
 						Lorem ipsum dolor, sit amet consectetur adipisicing
