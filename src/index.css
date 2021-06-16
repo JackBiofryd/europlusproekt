@@ -701,6 +701,7 @@ textarea.input {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: flex-start;
 }
 
 .work-images .top,
