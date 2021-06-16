@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import emailjs from 'emailjs-com';
 import LangContext from '../context/lang-context';
 
 export default function Contact() {
@@ -9,7 +10,7 @@ export default function Contact() {
 		phone: '',
 		message: ''
 	});
-	const langContext = useContext(LangContext);
+	const { isMk } = useContext(LangContext);
 
 	const [sendEmailBtnText, setSendEmailBtnText] = useState('Submit');
 
@@ -21,27 +22,26 @@ export default function Contact() {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		setSendEmailBtnText('Sending Email...');
+		setSendEmailBtnText(isMk ? 'Се Испраќа...' : 'Sending Email...');
 
-		const eData = {
-			access_token: 'aq9die7qk4h96d634xm3wdzt',
-			subject: 'EURO PLUS PROEKT CONTACT MESSAGE',
-			text: `Name: ${inputs.firstName} ${inputs.lastName}\nEmail: ${inputs.email}\nPhone: ${inputs.phone}\nMessage: ${inputs.message}`
-		};
-
-		const paramsToSend = toParams(eData);
-
-		const response = await fetch('https://postmail.invotes.com/send', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			body: paramsToSend
-		});
-
-		setSendEmailBtnText(
-			response.ok ? 'Email Sent!' : 'Email Not Sent. Please try again :('
-		);
+		emailjs
+			.sendForm(
+				'service_ovbxl8q',
+				'template_pu1edz8',
+				e.target,
+				'user_sx7hNqA0pzja1ztvJtPFq'
+			)
+			.then(
+				result => {
+					setSendEmailBtnText(isMk ? 'Испратено!' : 'Email Sent!');
+				},
+				error => {
+					setSendEmailBtnText(
+						isMk ? 'Е-маилот не е испратен :(' : 'Email not sent :('
+					);
+					console.log(error.text);
+				}
+			);
 
 		setInputs({
 			firstName: '',
@@ -50,17 +50,6 @@ export default function Contact() {
 			phone: '',
 			message: ''
 		});
-	};
-
-	const toParams = data => {
-		const form_data = [];
-		for (let key in data) {
-			form_data.push(
-				encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-			);
-		}
-
-		return form_data.join('&');
 	};
 
 	return (
@@ -74,6 +63,22 @@ export default function Contact() {
 				<h3 className="ML-heading mk">
 					Ајде да ја оствариме вашата замисла!
 				</h3>
+
+				<div className="flex-container space-between mt-3 px-2">
+					<div className="phone-container">
+						<p className="lead bold mb-1 en">Phone</p>
+						<h3 className="ML-heading en">070 314 997</h3>
+						<p className="lead bold mb-1 mk">Телефонски број</p>
+						<h3 className="ML-heading mk">070 314 997</h3>
+					</div>
+					<div className="address-container">
+						<p className="lead bold mb-1 en">Address</p>
+						<p className="lead bold mb-1 mk">Адреса</p>
+						<h3 className="ML-heading en">Gorce Petrov 47</h3>
+						<h3 className="ML-heading mk">Ѓорче Петров 47</h3>
+					</div>
+				</div>
+				<hr className="line line-light mt-1" />
 				<form onSubmit={handleSubmit} className="contact-form mt-3">
 					<div className="flex-group">
 						<div className="input-group">
@@ -90,9 +95,7 @@ export default function Contact() {
 								id="firstName"
 								value={inputs.firstName}
 								onChange={handleChange}
-								placeholder={
-									langContext.isMk ? 'Марко' : 'John'
-								}
+								placeholder={isMk ? 'Име...' : 'Name...'}
 							/>
 						</div>
 						<div className="input-group">
@@ -110,7 +113,7 @@ export default function Contact() {
 								value={inputs.lastName}
 								onChange={handleChange}
 								placeholder={
-									langContext.isMk ? 'Петров' : 'Doe'
+									isMk ? 'Презиме...' : 'Last Name...'
 								}
 							/>
 						</div>
@@ -130,7 +133,7 @@ export default function Contact() {
 								id="email"
 								value={inputs.email}
 								onChange={handleChange}
-								placeholder="johndoe@gmail.com"
+								placeholder={isMk ? 'Е-маил...' : 'Email...'}
 							/>
 						</div>
 						<div className="input-group">
@@ -147,7 +150,7 @@ export default function Contact() {
 								id="phone"
 								value={inputs.phone}
 								onChange={handleChange}
-								placeholder="071-555-555"
+								placeholder={isMk ? 'Број...' : 'Number...'}
 							/>
 						</div>
 					</div>
@@ -167,15 +170,23 @@ export default function Contact() {
 							onChange={handleChange}
 							cols="10"
 							rows="10"
-							placeholder={
-								langContext.isMk ? 'Порака' : 'Message'
-							}
+							placeholder={isMk ? 'Порака...' : 'Message...'}
 						/>
 					</div>
 					<input
 						type="submit"
-						value={sendEmailBtnText}
+						value={
+							sendEmailBtnText === 'Submit' && isMk
+								? 'Испрати'
+								: sendEmailBtnText
+						}
 						className="btn btn-block btn-inverse mt-3"
+					/>
+					<input
+						type="hidden"
+						value={`${inputs.firstName} ${inputs.lastName}`}
+						name="name"
+						id="name"
 					/>
 				</form>
 			</div>

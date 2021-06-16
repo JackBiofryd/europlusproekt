@@ -141,6 +141,11 @@ img {
 	border-bottom-left-radius: 25px;
 }
 
+.space-between {
+	align-items: space-between;
+	justify-content: space-between;
+}
+
 .S-heading {
 	font-size: 1.3rem;
 	font-weight: 600;
@@ -335,6 +340,11 @@ textarea.input {
 	padding: 1rem 1.5rem;
 	font-family: 'Poppins';
 	resize: none;
+}
+
+.input::placeholder {
+	opacity: 0.8;
+	font-family: var(--fonts);
 }
 
 /* Main Styling */
@@ -1016,6 +1026,11 @@ textarea.input {
 	font-size: 1rem;
 }
 
+.flex-container .phone-container,
+.flex-container .address-container {
+	transform: scale(0.8);
+}
+
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 920px), (orientation: portrait) {
 	.links {
@@ -1171,6 +1186,9 @@ textarea.input {
 @media (max-width: 920px) {
 	.flex-group {
 		flex-direction: column;
+	}
+	.address-container {
+		margin-top: 2rem;
 	}
 	#about .flex-container {
 		flex-direction: column-reverse;

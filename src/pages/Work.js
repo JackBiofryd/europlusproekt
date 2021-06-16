@@ -108,49 +108,49 @@ export default function Work() {
 									workType === 'solar' && 'current'
 								}`}
 								to="/work/solar">
-								Solar
+								{isMk ? 'Соларни' : 'Solar'}
 							</Link>
 							<Link
 								className={`work-link ${
 									workType === 'radiators' && 'current'
 								}`}
 								to="/work/radiators">
-								Radiators
+								{isMk ? 'Радијатори' : 'Radiators'}
 							</Link>
 							<Link
 								className={`work-link ${
 									workType === 'electricity' && 'current'
 								}`}
 								to="/work/electricity">
-								Electricity
+								{isMk ? 'Струја' : 'Electricity'}
 							</Link>
 							<Link
 								className={`work-link ${
 									workType === 'plumbing' && 'current'
 								}`}
 								to="/work/plumbing">
-								Pluming
+								{isMk ? 'Вода' : 'Plumbing'}
 							</Link>
 							<Link
 								className={`work-link ${
 									workType === 'heating' && 'current'
 								}`}
 								to="/work/heating">
-								Floor Heating
+								{isMk ? 'Подно Греење' : 'Floor Heating'}
 							</Link>
 							<Link
 								className={`work-link ${
 									workType === 'PVC' && 'current'
 								}`}
 								to="/work/PVC">
-								Woodwork
+								{isMk ? 'Врати и Прозори' : 'Doors & Windows'}
 							</Link>
 							<Link
 								className={`work-link ${
 									workType === 'AC' && 'current'
 								}`}
 								to="/work/AC">
-								AC
+								{isMk ? 'Клими' : 'AC'}
 							</Link>
 						</div>
 					</div>
