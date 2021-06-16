@@ -123,8 +123,8 @@ img {
 	bottom: 0;
 	right: 0;
 	border-radius: 0;
-	border-top-left-radius: 25px;
-	padding: 1rem 1rem;
+	border-top-left-radius: 15px;
+	padding: 0.5rem;
 }
 
 .btn-topright {
@@ -264,6 +264,9 @@ img {
 .px-2 {
 	padding-left: 2rem;
 	padding-right: 2rem;
+}
+.pr-4 {
+	padding-right: 4rem;
 }
 
 .center {
@@ -1007,7 +1010,7 @@ textarea.input {
 }
 
 /* RESPONSIVE MEDIA QUERIES */
-@media (max-width: 900px), (orientation: portrait) {
+@media (max-width: 920px), (orientation: portrait) {
 	.links {
 		display: flex;
 		justify-content: flex-end;
@@ -1032,7 +1035,6 @@ textarea.input {
 		left: 50%;
 		transform: translateX(-50%);
 		transition: 0.4s ease all;
-		z-index: 1000;
 		box-shadow: rgba(0, 0, 0, 0.2) 0 0 15px;
 	}
 
@@ -1151,7 +1153,7 @@ textarea.input {
 	}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 920px) {
 	.flex-group {
 		flex-direction: column;
 	}

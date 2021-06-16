@@ -12,7 +12,7 @@ export default function Work() {
 	const [images, setImages] = useState();
 	const { workType } = useParams();
 	const isSmallScreen = useMediaQuery({
-		query: '(max-width: 768px)'
+		query: '(max-width: 920px)'
 	});
 	const { isMk, setIsMk, setLang, lang } = useContext(LangContext);
 
@@ -93,7 +93,7 @@ export default function Work() {
 	if (isSmallScreen) {
 		navbar = (
 			<React.Fragment>
-				<div className="links navbar-secondary py-1 mr-4">
+				<div className="links navbar-secondary py-1 pr-4">
 					<div className="hamburger-menu">
 						<i
 							onClick={() => setShowMenu(prevState => !prevState)}
@@ -218,7 +218,7 @@ export default function Work() {
 			case 'radiators':
 				return isMk ? 'Радијатори' : 'Radiator Heating';
 			case 'plumbing':
-				return isMk ? 'Водоинсталација' : 'Plumbing';
+				return isMk ? 'Вода' : 'Plumbing';
 			case 'heating':
 				return isMk ? 'Подно Греење' : 'Floor Heating';
 			default:
