@@ -717,14 +717,12 @@ textarea.input {
 
 .work-img {
 	width: 100%;
-	height: 100%;
 }
 
 .work-img-container {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	height: 100%;
 }
 
 .work-img-container p {
