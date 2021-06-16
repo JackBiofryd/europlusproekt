@@ -1,9 +1,13 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
+const cors = require('cors');
 const app = express();
+const PORT = 5000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
@@ -12,22 +16,32 @@ const storage = multer.diskStorage({
 		const { workType } = req.params;
 		const dir = `./uploads/${workType}`;
 
+		try {
+			fs.mkdirSync(path.join(__dirname, `uploads`));
+		} catch (err) {}
+
+		try {
+			fs.mkdirSync(path.join(__dirname, `/uploads/${workType}`));
+		} catch (err) {
+			if (err.code !== 'EEXIST') throw err;
+		}
+
 		return cb(null, dir);
 	},
 	filename: (req, file, cb) => {
-		console.log(file);
 		cb(
 			null,
-			`${
-				path.parse(file.originalname).name
-			}--${Date.now()}.${path.extname(file.originalname)}`
+			`${path.parse(file.originalname).name}--${Date.now()}${path.extname(
+				file.originalname
+			)}`
 		);
 	}
 });
 const upload = multer({ storage });
 
-const PORT = 8080;
-
+/* 
+	API
+*/
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.get('/getImages/:imageType', (req, res) => {
@@ -37,6 +51,7 @@ app.get('/getImages/:imageType', (req, res) => {
 });
 
 const handleUpload = (req, res) => {
+	console.log('made it here');
 	if (!req.file)
 		return res.status(400).json({ msg: 'Please Select an Image' });
 
@@ -51,4 +66,11 @@ const handleUpload = (req, res) => {
 
 app.post('/upload/:workType', upload.single('image'), handleUpload);
 
-app.listen(PORT, () => console.log(`Listening on *:${PORT}`));
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'build'));
+});
+
+app.listen(process.env.PORT || PORT, () =>
+	console.log(`Listening on *:${PORT}`)
+);
