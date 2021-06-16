@@ -713,10 +713,12 @@ textarea.input {
 
 .work-images a {
 	margin: 0.15rem;
+	margin-bottom: 0;
 }
 
 .work-img {
 	width: 100%;
+	height: unset;
 }
 
 .work-img-container {
