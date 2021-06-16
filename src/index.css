@@ -22,6 +22,10 @@ body {
 	color: #333;
 }
 
+button[type='submit'] {
+	-webkit-appearance: none;
+}
+
 a {
 	text-decoration: none;
 	cursor: pointer;
