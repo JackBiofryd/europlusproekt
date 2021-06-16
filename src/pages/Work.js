@@ -192,7 +192,6 @@ export default function Work() {
 
 	const setSlide = slide => {
 		setImgIndex(slide);
-		console.log(slide);
 		const images = document.getElementsByClassName('carousel-img');
 		for (let i = 0; i < images.length; i++) {
 			images[i].style.display = 'none';
