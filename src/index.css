@@ -128,7 +128,7 @@ img {
 }
 
 .btn-topright {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0;
 	border-radius: 0;
@@ -210,6 +210,9 @@ img {
 }
 .mr-3 {
 	margin-right: 3rem;
+}
+.mr-4 {
+	margin-right: 4rem;
 }
 .my-1 {
 	margin-top: 1rem;

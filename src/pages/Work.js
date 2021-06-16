@@ -93,7 +93,7 @@ export default function Work() {
 	if (isSmallScreen) {
 		navbar = (
 			<React.Fragment>
-				<div className="links navbar-secondary py-1">
+				<div className="links navbar-secondary py-1 mr-4">
 					<div className="hamburger-menu">
 						<i
 							onClick={() => setShowMenu(prevState => !prevState)}
@@ -256,7 +256,7 @@ export default function Work() {
 				<button className="btn btn-topright" onClick={onLangChange}>
 					{lang.toUpperCase()}
 				</button>
-				<h1 className="L-heading">{getHeading(workType)}</h1>
+				<h1 className="L-heading center">{getHeading(workType)}</h1>
 			</div>
 			{navbar}
 			<div className="img-container container mt-2 center">

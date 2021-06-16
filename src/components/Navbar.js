@@ -133,7 +133,7 @@ export default function Navbar() {
 						<button
 							className="lang-change-btn"
 							onClick={onLangChange}>
-							EN
+							{langContext.lang.toUpperCase()}
 						</button>
 					</div>
 				</div>
