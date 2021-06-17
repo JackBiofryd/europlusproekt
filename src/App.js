@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Work from './pages/Work';
 import Upload from './pages/Upload';
+import DeleteImage from './pages/DeleteImage';
 import LangContext from './context/lang-context';
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
 						</Route>
 						<Route exact path="/work/:workType">
 							<Work />
+						</Route>
+						<Route exact path="/delete/:fileName">
+							<DeleteImage />
 						</Route>
 						<Redirect to="/" />
 					</Switch>

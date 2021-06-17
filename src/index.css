@@ -888,7 +888,7 @@ textarea.input {
 	background: rgba(0, 0, 0, 0.8);
 	display: grid;
 	place-items: center;
-	z-index: 10000;
+	z-index: 10002;
 }
 .modal-hide {
 	display: none;
@@ -905,6 +905,7 @@ textarea.input {
 	background: #fafafa;
 	cursor: pointer;
 	transition: 0.3s all ease;
+	opacity: 0.65;
 }
 
 .modal .arrow-left:hover,
@@ -931,8 +932,7 @@ textarea.input {
 	left: 50%;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	height: 80vh;
-	width: auto;
+	width: 80vw;
 	display: none;
 }
 
@@ -1029,6 +1029,22 @@ textarea.input {
 .flex-container .phone-container,
 .flex-container .address-container {
 	transform: scale(0.8);
+}
+
+.loader {
+	width: 50px;
+	height: 50px;
+	border: 7px solid var(--primary-color);
+	border-radius: 50%;
+	border-top-color: #fafafa;
+	animation: loader 1s linear 0s infinite;
+	margin: auto;
+}
+
+@keyframes loader {
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 /* RESPONSIVE MEDIA QUERIES */

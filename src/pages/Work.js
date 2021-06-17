@@ -10,6 +10,7 @@ export default function Work() {
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const [images, setImages] = useState();
+	const [isLoading, setIsLoading] = useState(false);
 	const { workType } = useParams();
 	const isSmallScreen = useMediaQuery({
 		query: '(max-width: 920px)'
@@ -17,13 +18,15 @@ export default function Work() {
 	const { isMk, setIsMk, setLang, lang } = useContext(LangContext);
 
 	useEffect(() => {
+		setIsLoading(true);
 		const fetchFiles = async () => {
 			const response = await fetch(
-				`https://europlusproekt.herokuapp.com/getImages/${workType}`
+				`http://localhost:5000/getImages/${workType}`
 			);
 			const data = await response.json();
 
 			setImages(data.files);
+			setIsLoading(false);
 		};
 
 		fetchFiles();
@@ -164,8 +167,7 @@ export default function Work() {
 
 		const prevIndex = imgIndex;
 		let newIndex = imgIndex + numOfSlides;
-		if (newIndex === -1) newIndex = images.length - 1;
-		if (newIndex === images.length) newIndex = 0;
+		if (newIndex === -1 || newIndex === images.length) return;
 		setImgIndex(newIndex);
 
 		for (let i = 0; i < images.length; i++) {
@@ -195,6 +197,12 @@ export default function Work() {
 		const images = document.getElementsByClassName('carousel-img');
 		for (let i = 0; i < images.length; i++) {
 			images[i].style.display = 'none';
+			images[i].classList.remove(
+				'slide-from-right-to-middle',
+				'slide-from-middle-to-left',
+				'slide-from-left-to-middle',
+				'slide-from-middle-to-right'
+			);
 		}
 		images[slide].style.display = 'inline';
 	};
@@ -227,25 +235,44 @@ export default function Work() {
 
 	return (
 		<div>
-			<Modal hide={!showModal} onCancel={() => setShowModal(false)}>
-				<div className="arrow-left" onClick={() => changeSlide(-1)}>
-					<i className="fas fa-arrow-left"></i>
-				</div>
-				<div className="arrow-right" onClick={() => changeSlide(1)}>
-					<i className="fas fa-arrow-right"></i>
-				</div>
-				<div className="carousel">
-					{images &&
-						images.map((image, index) => (
-							<img
-								src={`https://europlusproekt.herokuapp.com/uploads/${workType}/${image}`}
-								alt="Some of our work"
-								className="carousel-img"
-								key={index}
-							/>
-						))}
-				</div>
-			</Modal>
+			{!isLoading && (
+				<Modal hide={!showModal} onCancel={() => setShowModal(false)}>
+					{images && imgIndex !== 0 && (
+						<div
+							className="arrow-left"
+							onClick={() => changeSlide(-1)}>
+							<i className="fas fa-arrow-left"></i>
+						</div>
+					)}
+					{images && imgIndex !== images.length - 1 && (
+						<div
+							className="arrow-right"
+							onClick={() => changeSlide(1)}>
+							<i className="fas fa-arrow-right"></i>
+						</div>
+					)}
+					<div className="carousel">
+						{images &&
+							images.map((image, index) => (
+								<React.Fragment>
+									<img
+										src={`http://localhost:5000/image/${image}`}
+										alt="Some of our work"
+										className="carousel-img"
+										key={index}
+									/>
+									{imgIndex === index && (
+										<Link
+											to={`/delete/${image}`}
+											className="btn btn-bottomright">
+											<i className="fas fa-trash"></i>
+										</Link>
+									)}
+								</React.Fragment>
+							))}
+					</div>
+				</Modal>
+			)}
 
 			<div className={`work-bg bg-${workType}`}>
 				<Link to="/" className="btn btn-topleft">
@@ -258,21 +285,28 @@ export default function Work() {
 				<h1 className="L-heading center">{getHeading(workType)}</h1>
 			</div>
 			{navbar}
-			<div className="img-container container mt-2 center">
-				{images &&
-					images.map((image, index) => (
-						<img
-							src={`https://europlusproekt.herokuapp.com/uploads/${workType}/${image}`}
-							alt="Some of our work"
-							onClick={onImgClick}
-							key={index}
-							number={index}
-						/>
-					))}
-				<Link to="/upload" className="btn btn-bottomright">
-					+
-				</Link>
-			</div>
+			{isLoading && (
+				<div className="center mt-1">
+					<div className="loader"></div>
+				</div>
+			)}
+			{!isLoading && (
+				<div className="img-container container mt-2 center">
+					{images &&
+						images.map((image, index) => (
+							<img
+								src={`http://localhost:5000/image/${image}`}
+								alt="Some of our work"
+								onClick={onImgClick}
+								key={index}
+								number={index}
+							/>
+						))}
+					<Link to="/upload" className="btn btn-bottomright">
+						+
+					</Link>
+				</div>
+			)}
 		</div>
 	);
 }

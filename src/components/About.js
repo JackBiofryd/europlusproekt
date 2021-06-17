@@ -13,10 +13,23 @@ export default function About() {
 				<div className="about-text px-2">
 					<h3 className="S-heading center mb-3 en">About Us</h3>
 					<h3 className="S-heading center mb-3 mk">За Нас</h3>
-					<p className="lead mt-1-5">
-						Lorem ipsum, dolor sit amet consectetur adipisicing
-						elit. Accusantium praesentium nostrum qui laudantium
-						quia architecto impedit. Quos a incidunt quidem.
+					<p className="lead mt-1-5 en">
+						We are a company that works with Solar Panel
+						Installation, Raditator Installation, Floor Heating, PVC
+						Doors and Windows, Power Installation, AC Installation
+						and Plumbing!
+						<br />
+						<br />
+						You can check out our work here:
+					</p>
+					<p className="lead mt-1-5 mk">
+						Ние сме компанија која работи со Инсталација на Соларни
+						Панели, Инсталација на Радијатори, Подно Греење, ПВЦ
+						Врати и Прозорци, Инсталација на Струја, Климатизација и
+						Водоинсталација!!
+						<br />
+						<br />
+						Можете да ја видите нашата работа овде:
 					</p>
 					<Link
 						to="ourWork"
@@ -29,21 +42,31 @@ export default function About() {
 						<p className="mk">Наши Проекти</p>
 					</Link>
 					<p className="lead mt-2 en">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Necessitatibus quisquam provident cum maxime minima
-						harum obcaecati neque consequuntur ex ut.
+						In our company we assure you that the work is going to
+						be done fast and cheap, yet professional and elegant!
 					</p>
 					<p className="lead mt-2 mk">
-						Lorem ipsum моркови подобрени попусти. Обезбедете барем
-						во овој момент една од потребите на од нив, ниту како
-						резултат на тоа може да станат слепи.
+						Во нашата компанија може да ве осигуриме дека работата
+						ќе биде завршена брзо и ефтино, но професионално и
+						елегантно!
 					</p>
-					<p className="lead mt-2 mb-3">
-						Lorem ipsum dolor, sit amet consectetur adipisicing
-						elit. Magni doloremque voluptates officia. In, quidem
-						dicta modi illum quos at voluptatum aperiam sed
-						consequatur repellendus molestiae ea! Praesentium,
-						perspiciatis magnam. Modi!
+					<p className="lead mt-2 en">
+						"Is the material good?" - "No! It's the best!" <br /> We
+						make sure the material we work with is the best there
+						is!
+					</p>
+					<p className="lead mt-2 mk">
+						„Дали материјалот е добар?“ - „Не. Материјалот е
+						најдобар!“ <br /> Во EuroPlusProekt материјалот кој што
+						го користиме е најдобриот што постои!
+					</p>
+					<p className="lead mt-2 mb-3 en">
+						We give you plenty of options to choose from and we
+						always make sure you get EXACTLY what you want and need!
+					</p>
+					<p className="lead mt-2 mb-3 mk">
+						Ви даваме многу опции од кои вие може да одберете ТОЧНО
+						што сакате!
 					</p>
 				</div>
 			</div>
