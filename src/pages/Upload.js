@@ -33,7 +33,7 @@ export default function Upload() {
 		formData.append('image', inputs.image);
 
 		const response = await fetch(
-			`http://localhost:5000/upload/${imgType}`,
+			`${process.env.REACT_APP_BACKEND_URL}/upload/${imgType}`,
 			{
 				method: 'POST',
 				body: formData

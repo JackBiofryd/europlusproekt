@@ -21,7 +21,7 @@ export default function Work() {
 		setIsLoading(true);
 		const fetchFiles = async () => {
 			const response = await fetch(
-				`http://localhost:5000/getImages/${workType}`
+				`${process.env.REACT_APP_BACKEND_URL}/getImages/${workType}`
 			);
 			const data = await response.json();
 
@@ -256,7 +256,7 @@ export default function Work() {
 							images.map((image, index) => (
 								<React.Fragment>
 									<img
-										src={`http://localhost:5000/image/${image}`}
+										src={`${process.env.REACT_APP_BACKEND_URL}/image/${image}`}
 										alt="Some of our work"
 										className="carousel-img"
 										key={index}
@@ -295,7 +295,7 @@ export default function Work() {
 					{images &&
 						images.map((image, index) => (
 							<img
-								src={`http://localhost:5000/image/${image}`}
+								src={`${process.env.REACT_APP_BACKEND_URL}/image/${image}`}
 								alt="Some of our work"
 								onClick={onImgClick}
 								key={index}
