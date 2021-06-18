@@ -1242,7 +1242,7 @@ textarea.input {
 	}
 }
 
-@media (max-height: 500px), (max-width: 500px) {
+@media (max-height: 500px) and (max-width: 500px) {
 	.text-container a,
 	.text-container p {
 		display: none;
