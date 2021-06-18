@@ -352,7 +352,6 @@ textarea.input {
 	height: 100vh;
 	color: #fafafa;
 	position: relative;
-	overflow: hidden;
 }
 
 .main-landing .main-nav {
@@ -807,8 +806,9 @@ textarea.input {
 /* Work Page */
 .work-bg {
 	height: 50vh;
-	display: grid;
-	place-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: #fafafa;
 }
 
@@ -1242,7 +1242,7 @@ textarea.input {
 	}
 }
 
-@media (max-height: 500px) {
+@media (max-height: 500px), (max-width: 500px) {
 	.text-container a,
 	.text-container p {
 		display: none;
@@ -1257,6 +1257,6 @@ textarea.input {
 
 @media (min-width: 1600px) {
 	.XL-heading {
-		font-size: 6rem;
+		font-size: 6.5rem;
 	}
 }
