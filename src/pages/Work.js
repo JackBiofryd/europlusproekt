@@ -280,7 +280,7 @@ export default function Work() {
 					{isMk ? 'Назад' : 'Home'}
 				</Link>
 				<button className="btn btn-topright" onClick={onLangChange}>
-					{lang.toUpperCase()}
+					{lang === 'en' ? 'MK' : 'EN'}
 				</button>
 				<h1 className="L-heading center">{getHeading(workType)}</h1>
 			</div>

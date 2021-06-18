@@ -352,6 +352,7 @@ textarea.input {
 	height: 100vh;
 	color: #fafafa;
 	position: relative;
+	overflow: hidden;
 }
 
 .main-landing .main-nav {

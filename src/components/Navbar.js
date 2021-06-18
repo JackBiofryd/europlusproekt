@@ -72,7 +72,7 @@ export default function Navbar() {
 					{langContext.isMk ? 'Проекти' : 'Our Work'}
 				</Link>
 				<button className="lang-change-btn" onClick={onLangChange}>
-					{langContext.lang.toUpperCase()}
+					{langContext.lang === 'en' ? 'MK' : 'EN'}
 				</button>
 			</div>
 		</React.Fragment>
@@ -133,7 +133,7 @@ export default function Navbar() {
 						<button
 							className="lang-change-btn"
 							onClick={onLangChange}>
-							{langContext.lang.toUpperCase()}
+							{langContext.lang === 'en' ? 'MK' : 'EN'}
 						</button>
 					</div>
 				</div>
