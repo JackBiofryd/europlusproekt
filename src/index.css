@@ -874,7 +874,8 @@ textarea.input {
 }
 
 .img-container img {
-	width: 200px;
+	height: 120px;
+	width: auto;
 	margin: 0.5rem;
 	cursor: pointer;
 }
@@ -932,7 +933,8 @@ textarea.input {
 	left: 50%;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	width: 80vw;
+	height: 80vh;
+	width: auto;
 	display: none;
 }
 
