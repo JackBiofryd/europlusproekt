@@ -82,8 +82,8 @@ export default function OurWork() {
 							</li>
 							<li>
 								<Link to="/work/PVC">
-									<p className="en">PVC Doors and Windows</p>
-									<p className="mk">ПВЦ Врати и Прозори</p>
+									<p className="en">Rehau Profiles</p>
+									<p className="mk">Рехау Профили</p>
 								</Link>
 							</li>
 							<li>
@@ -156,11 +156,9 @@ export default function OurWork() {
 										className="work-img"
 									/>
 									<p className="img-text en">
-										Doors & Windows
+										Rehau Profiles
 									</p>
-									<p className="img-text mk">
-										Врати и Прозори
-									</p>
+									<p className="img-text mk">Рехау Профили</p>
 								</div>
 							</Link>
 							<Link to="/work/electricity">

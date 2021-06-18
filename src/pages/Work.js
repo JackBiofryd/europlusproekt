@@ -82,7 +82,7 @@ export default function Work() {
 				<Link
 					className={`work-link ${workType === 'PVC' && 'current'}`}
 					to="/work/PVC">
-					{isMk ? 'Врати и Прозори' : 'Doors & Windows'}
+					{isMk ? 'Рехау Профили' : 'Rehau Profiles'}
 				</Link>
 				<Link
 					className={`work-link ${workType === 'AC' && 'current'}`}
@@ -146,7 +146,7 @@ export default function Work() {
 									workType === 'PVC' && 'current'
 								}`}
 								to="/work/PVC">
-								{isMk ? 'Врати и Прозори' : 'Doors & Windows'}
+								{isMk ? 'Рехау Профили' : 'Rehau Profiles'}
 							</Link>
 							<Link
 								className={`work-link ${
@@ -215,7 +215,7 @@ export default function Work() {
 	const getHeading = workType => {
 		switch (workType) {
 			case 'PVC':
-				return isMk ? 'Врати и Прозори' : 'Doors & Windows';
+				return isMk ? 'Рехау Профили' : 'Rehau Profiles';
 			case 'AC':
 				return isMk ? 'Клима Уреди' : 'Air Conditioning';
 			case 'electricity':

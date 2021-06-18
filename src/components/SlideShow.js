@@ -164,10 +164,10 @@ export default function SlideShow() {
 					</div>
 					<div className="text-container mr-3 fade">
 						<h2 className="XL-heading en">
-							Doors & <br /> Windows.
+							Rehau <br /> Profiles.
 						</h2>
 						<h2 className="XL-heading mk">
-							Врати и <br /> Прозори.
+							Рехау <br /> Профили.
 						</h2>
 						<p className="lead en">
 							Keep the cold outside! <br /> Get the best doors and
