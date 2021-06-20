@@ -15,18 +15,20 @@ export default function About() {
 					<h3 className="S-heading center mb-3 mk">За Нас</h3>
 					<p className="lead mt-1-5 en">
 						We are a company that works with Solar Panel
-						Installation, Raditator Installation, Floor Heating, PVC
-						Doors and Windows, Power Installation, AC Installation
-						and Plumbing!
+						Installation, Heating, Raditators, Floor Heating,
+						Heating Pumps, Pallet Boilers, Wood Boilers, Electical
+						Boilers, Stoves, PVC Doors and Windows, Power
+						Installation, AC Installation and Plumbing!
 						<br />
 						<br />
 						You can check out our work here:
 					</p>
 					<p className="lead mt-1-5 mk">
 						Ние сме компанија која работи со Инсталација на Соларни
-						Панели, Инсталација на Радијатори, Подно Греење, ПВЦ
-						Врати и Прозорци, Инсталација на Струја, Климатизација и
-						Водоинсталација!!
+						Панели, Парно Греење, Радијатори, Подно Греење,
+						Топлински Пумпи, Котли на Палети, Котли на Дрва, Котли
+						на Струја, Шпорети, ПВЦ Врати и Прозорци, Инсталација на
+						Струја, Климатизација и Водоинсталација!
 						<br />
 						<br />
 						Можете да ја видите нашата работа овде:
@@ -57,8 +59,8 @@ export default function About() {
 					</p>
 					<p className="lead mt-2 mk">
 						„Дали материјалот е добар?“ - „Не. Материјалот е
-						најдобар!“ <br /> Во EuroPlusProekt материјалот кој што
-						го користиме е најдобриот што постои!
+						најдобар!“ <br /> Во Euro Plus Proekt материјалот кој
+						што го користиме е најдобриот што постои!
 					</p>
 					<p className="lead mt-2 mb-3 en">
 						We give you plenty of options to choose from and we

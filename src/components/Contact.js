@@ -71,12 +71,20 @@ export default function Contact() {
 						<p className="lead bold mb-1 mk">Телефонски број</p>
 						<h3 className="ML-heading mk">070 314 997</h3>
 					</div>
-					<div className="address-container">
+					<a
+						className="address-container"
+						href="https://www.google.com/maps/place/Euro+Plus+Proekt+DOOEL/@41.6374406,22.4731763,16z/data=!4m5!3m4!1s0x0:0x5d27d0eae8cf36af!8m2!3d41.6376491!4d22.473305"
+						target="_blank"
+						rel="noreferrer">
 						<p className="lead bold mb-1 en">Address</p>
 						<p className="lead bold mb-1 mk">Адреса</p>
-						<h3 className="ML-heading en">Gorce Petrov 47</h3>
-						<h3 className="ML-heading mk">Ѓорче Петров 47</h3>
-					</div>
+						<h3 className="ML-heading en">
+							Gorce Petrov 47, <br /> Radovis, Macedonia
+						</h3>
+						<h3 className="ML-heading mk">
+							Ѓорче Петров 47, <br /> Радовиш, Македонија
+						</h3>
+					</a>
 				</div>
 				<hr className="line line-light mt-1" />
 				<form onSubmit={handleSubmit} className="contact-form mt-3">
