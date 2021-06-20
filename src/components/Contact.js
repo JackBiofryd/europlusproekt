@@ -67,9 +67,8 @@ export default function Contact() {
 				<div className="flex-container space-between mt-3 px-2">
 					<div className="phone-container">
 						<p className="lead bold mb-1 en">Phone</p>
-						<h3 className="ML-heading en">070 314 997</h3>
 						<p className="lead bold mb-1 mk">Телефонски број</p>
-						<h3 className="ML-heading mk">070 314 997</h3>
+						<h3 className="ML-heading">(+389) 70 314 997</h3>
 					</div>
 					<a
 						className="address-container"
