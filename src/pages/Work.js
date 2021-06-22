@@ -302,6 +302,9 @@ export default function Work() {
 								number={index}
 							/>
 						))}
+					{images && images.length === 0 && (
+						<p className="lead center">Images Coming Soon!</p>
+					)}
 					<Link to="/upload" className="btn btn-bottomright">
 						+
 					</Link>
