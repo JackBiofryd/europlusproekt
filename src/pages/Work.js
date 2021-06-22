@@ -303,7 +303,14 @@ export default function Work() {
 							/>
 						))}
 					{images && images.length === 0 && (
-						<p className="lead center">Images Coming Soon!</p>
+						<React.Fragment>
+							<p className="lead center en">
+								Images Coming Soon!
+							</p>
+							<p className="lead center mk">
+								Сликите пристигуваат наскоро!
+							</p>
+						</React.Fragment>
 					)}
 					<Link to="/upload" className="btn btn-bottomright">
 						+
