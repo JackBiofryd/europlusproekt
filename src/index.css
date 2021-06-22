@@ -934,8 +934,7 @@ textarea.input {
 	left: 50%;
 	top: 50%;
 	transform: translateX(-50%) translateY(-50%);
-	height: 80vh;
-	width: auto;
+	width: 80vw;
 	display: none;
 }
 
