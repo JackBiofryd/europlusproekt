@@ -307,9 +307,7 @@ export default function Work() {
 							<p className="lead center en">
 								Images Coming Soon!
 							</p>
-							<p className="lead center mk">
-								Сликите пристигуваат наскоро!
-							</p>
+							<p className="lead center mk">Наскоро!</p>
 						</React.Fragment>
 					)}
 					<Link to="/upload" className="btn btn-bottomright">
